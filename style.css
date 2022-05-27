@@ -1,11 +1,11 @@
 :root {
     /* Colors */
-    --Oscuto: #333;
-    --primary-Accion: #fb9c00;
-    --secondary-blue: #1a9af7;
- }
- 
- html {
+    --Oscuro: #333;
+    --primary-action: #fb9c00;
+    --secundary-action: #ffebee; 
+}
+
+html {
      font-family: 'Roboto', sans-serif;
      font-size: 62.5%;
   }
@@ -24,7 +24,7 @@ main{
 /* Acomodamos los estilos, en dos columnas y alinamos las etiquetas de la info  */
 .hero{
     display: grid;    
-    grid-auto-rows: 400px;
+    grid-auto-rows: 550px;
     grid-template-columns: 2fr 3fr;
 }
 
@@ -33,20 +33,20 @@ main{
     }
 
     .info-title{
-      color: var(--Oscuto);
+      color: var(--Oscuro);
       font-size: 4rem;
       font-weight: bolder;
       margin-bottom: 24px 
     }
 
     .info-subtitle{
-      color: var(--Oscuto);
+      color: var(--Oscuro);
       font-size: 1.5rem;
       margin-bottom: 24px 
     }
 
     .info-buttom{
-        background-color: var(--primary-Accion);
+        background-color: var(--primary-action);
         border: none;
         border-radius: 20px;
         color: var(--Oscuto);
@@ -69,7 +69,7 @@ main{
 }
 
 .dishes-title{
-    color: var(--Oscuto);
+    color: var(--Oscuro);
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 50px;
@@ -99,3 +99,37 @@ main{
         /* Distribución: inicia fila / inicia columna / temina fila / termina columna */
         grid-area: 1 / 1 / 3 / 3;
     }
+
+/* SEGUNDA SECCIÓN */
+/* Acá utilizaremos la alinaación con los atributos de AREA */
+
+.menu{
+    margin-bottom: 200px;
+}
+
+.menu-title{
+    color: var(--Oscuro);
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    text-align: center;
+    border-top-left-radius: 40px;
+}
+
+.menu-grid{
+    display: grid;
+    gap: 25px;
+    justify-content: center;
+    grid-template-columns: repeat(5, minmax(100px, 250px));
+}
+
+.menu-grid-item{
+    background-color: var(--secundary-action);
+    padding: 15px;
+    border-top-left-radius: 30px;
+}
+.menu-grid-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
