@@ -25,7 +25,9 @@ main{
 .hero{
     display: grid;    
     grid-auto-rows: 550px;
-    grid-template-columns: 2fr 3fr;
+    /*con minmax hacemos el contenedor responsivo */
+    grid-template-columns: minmax(300px, 2fr) 3fr;
+    border-bottom: 1px solid;
 }
 
     .info{
@@ -82,7 +84,8 @@ main{
         /* El gap, es el espaciado que hay entre las linea de la grilla */
         gap: 25px;
         grid-auto-rows: 1fr;
-        grid-template-columns: repeat(4, minmax(150px, 200px)) ;
+        /* con auto-fit en grid-templete, permitimos que esta sección sea responsivo */
+        grid-template-columns: repeat(auto-fit, minmax(75px, 200px)) ;
         /* Al .dishes-grid ser el contenedor principal, con el atributo justify/content, podemos centrar en el espacio  */
         justify-content: center;
     }
@@ -93,8 +96,7 @@ main{
         object-fit: cover;
     }
 
-
-    .dishes-item__big{
+      .dishes-item__big{
         /* Vamos a acomodar el plato grande distribuido en un area, desde las columnas en la linea 1 hasta la liena 3 al igual que en las filas*/    
         /* Distribución: inicia fila / inicia columna / temina fila / termina columna */
         grid-area: 1 / 1 / 3 / 3;
@@ -120,7 +122,8 @@ main{
     display: grid;
     gap: 25px;
     justify-content: center;
-    grid-template-columns: repeat(5, minmax(100px, 250px));
+    /* Con el Auto-fit podemos mantener la hoja Responsive */
+    grid-template-columns: repeat(auto-fit, 150px);
 }
 
 .menu-grid-item{
@@ -132,4 +135,22 @@ main{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* Agregamos media query para cuando cambie de tamaña */
+
+@media screen and (max-width: 768px) {
+    .hero{
+        grid-template-columns: minmax(300px, 500px);
+        justify-content: center;
+    }
+    
+    .hero-image{
+        display: none;
+    }
+    
+    .dishes-grid{
+        /*  */
+        grid-template-columns: repeat(auto-fit, minmax(75px, 100px));
+    }
 }
